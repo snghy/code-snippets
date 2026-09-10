@@ -1,6 +1,6 @@
 =LET(addr_pflen,TEXTSPLIT(A1,"/"),
 octs,INT(TEXTSPLIT(INDEX(addr_pflen,1),".")),
-ip,SUM(octs*{167772160,65536,256,0}),
+ip,SUM(octs*{167772160,65536,256,1}),
 bwidth,32-INDEX(addr_pflen,2),
 width,BITLSHIFT(1,bwidth),
 assert,REDUCE(TRUE,MAP(octs,LAMBDA(n,AND(n>=0,n<=255))),AND),
